@@ -1,9 +1,0 @@
-{
-  "pluginId": "neobase.horloge",
-  "repo": "NDesumeur/neobase-plugin-horloge",
-  "version": "1.2.0",
-  "sha256": "a207093c1a58599b5a58b331654759ee863691dab57746846e21c04ef808d635",
-  "approvedAt": "2026-10-31T04:25:44.553Z",
-  "neobase": ">=4.0.0",
-  "signature": "XOyYlo8M1ljE4Vkxq10veOUSzfXByfj/b623CFvyh3Z1nKgspFhuVRqx2F08CtrX/iwNVhH/jh6ZB+DLM2WIDQ=="
-}
