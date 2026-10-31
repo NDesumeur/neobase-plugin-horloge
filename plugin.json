@@ -1,0 +1,16 @@
+{
+  "id": "neobase.horloge",
+  "name": "Horloge mondiale",
+  "version": "1.0.0",
+  "author": "NDesumeur",
+  "description": "L'heure dans plusieurs villes, avec un décalage pour savoir quelle heure il sera là-bas.",
+  "entry": "index.js",
+  "view": "horloge",
+  "neobase": ">=4.0.0",
+  "type": "app",
+  "category": "Outils",
+  "mobile": true,
+  "system": false,
+  "dependencies": {},
+  "permissions": ["storage", "network"]
+}
