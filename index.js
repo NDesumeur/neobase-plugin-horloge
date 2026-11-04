@@ -1,6 +1,6 @@
 // Horloge mondiale : ton appli d'origine (HTML et code inchangés), livrée en plugin.
-// Ses données sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoBase.
-// Elle tourne dans le bac à sable de NeoBase, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
+// Ses données sont dans le dossier du plugin, que NeoDex sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoDex.
+// Elle tourne dans le bac à sable de NeoDex, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
 const HTML = "<div class=\"appWrap\">\n      <div class=\"agHead\"><span class=\"label\">Horloge mondiale</span><input class=\"f\" id=\"wcAdd\" placeholder=\"Ajouter une ville… (Entrée)\" spellcheck=\"false\" style=\"width:260px;margin-left:auto;font-size:15px;padding:8px 12px\"></div>\n      <div class=\"sysCard px\"><div class=\"bdPlan\">Décaler de <input type=\"range\" id=\"wcShift\" min=\"-24\" max=\"24\" value=\"0\" style=\"flex:1;accent-color:var(--magenta)\"><b id=\"wcShiftVal\"></b><button class=\"btn px\" id=\"wcNow\">MAINTENANT</button></div></div>\n      <div id=\"wcGrid\" class=\"sysGrid\"></div>\n    </div>";
 /*CSS-MOVED*/ const CSS = `.wcCard{position:relative}
 .wcHead{display:flex;align-items:center;justify-content:space-between}
@@ -11,15 +11,15 @@ const HTML = "<div class=\"appWrap\">\n      <div class=\"agHead\"><span class=\
 .bdPlan{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:16px;color:var(--lilac)}
 .bdPlan .f{width:110px;font-size:15px;padding:7px 10px}
 .bdPlan select.f{width:160px}
-`;  // le style de ce plugin (il utilise les variables du thème de NeoBase)
+`;  // le style de ce plugin (il utilise les variables du thème de NeoDex)
 export default async function (ctx) {
   const view = ctx.view;
-  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoBase pour s'ouvrir."; return; }
+  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoDex pour s'ouvrir."; return; }
   const { el, toast, sfx, ask, newTab, pixIcon, PIX, WX } = ctx.host;
   const folder = ctx.folder, legacy = ctx.legacy || {};
   ctx.host.addStyle(CSS);
   view.innerHTML = HTML;
-  const $ = id => id === "clockApp" ? view : view.querySelector('#' + id);  // les identifiants de ta vue, sans toucher à ceux du reste de NeoBase
+  const $ = id => id === "clockApp" ? view : view.querySelector('#' + id);  // les identifiants de ta vue, sans toucher à ceux du reste de NeoDex
   const doc = async n => { try { return await folder.read(n); } catch { return null; } };
   const ymd = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
