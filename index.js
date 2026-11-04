@@ -1,6 +1,6 @@
 // Horloge mondiale : ton appli d'origine (HTML et code inchangés), livrée en plugin.
 // Ses données sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoBase.
-// Elle demande l'accès complet pour utiliser les outils d'interface de NeoBase. NeoBase ne l'ouvre que si elle est signée.
+// Elle tourne dans le bac à sable de NeoBase, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
 const HTML = "<div class=\"appWrap\">\n      <div class=\"agHead\"><span class=\"label\">Horloge mondiale</span><input class=\"f\" id=\"wcAdd\" placeholder=\"Ajouter une ville… (Entrée)\" spellcheck=\"false\" style=\"width:260px;margin-left:auto;font-size:15px;padding:8px 12px\"></div>\n      <div class=\"sysCard px\"><div class=\"bdPlan\">Décaler de <input type=\"range\" id=\"wcShift\" min=\"-24\" max=\"24\" value=\"0\" style=\"flex:1;accent-color:var(--magenta)\"><b id=\"wcShiftVal\"></b><button class=\"btn px\" id=\"wcNow\">MAINTENANT</button></div></div>\n      <div id=\"wcGrid\" class=\"sysGrid\"></div>\n    </div>";
 /*CSS-MOVED*/ const CSS = `.wcCard{position:relative}
 .wcHead{display:flex;align-items:center;justify-content:space-between}
