@@ -1,7 +1,7 @@
 {
   "id": "neodex.horloge",
   "name": "Horloge mondiale",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "author": "NDesumeur",
   "description": "L'heure dans plusieurs villes, avec un décalage pour comparer les fuseaux.",
   "icon": "icon.png",
